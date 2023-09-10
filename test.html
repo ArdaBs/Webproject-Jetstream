@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- TEMPLATE_START: templates\head.html -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="Web-logo.png"/>
+<link rel="stylesheet" href="styles/background.css" />
+<link rel="stylesheet" href="styles/styles.css" />
+<link rel="stylesheet" href="styles/pricing.css">
+<link rel="stylesheet" href="styles/navigationsize.css">
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+  crossorigin="anonymous"
+/>
+<!-- TEMPLATE_END: templates\head.html -->
+    <title>Serviceanmeldung</title>
+</head>
+<body>
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    <!-- TEMPLATE_START: templates\navigation.html -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top expanded" id="navbarid">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img src="Jetstream-Circle-Logo.png" alt="Logo" width="55" height="55">
+        </a>
+        <h2 class="navbar-title"><a class="nav-link" href="index.html">Jetstream - Service</a></h2>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="about-us.html">Über uns</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="buy.html">Online-Anmeldung</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Kontakt</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="credits.html">Credits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="test.html">Online-Anmeldung-V1 <strong>(Just for Showcase)</strong></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- TEMPLATE_END: templates\navigation.html -->
+
+<div class="center-screen">
+    <div class="bg-white p-4 custom-form">
+        <h2 class="mb-4">Serviceauftragsanmeldung</h2>
+        <form>
+            <div class="form-group">
+                <label for="customerName">Kundenname</label>
+                <input type="text" class="form-control" id="customerName" name="customerName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="priority"><Strong>Priorität</Strong></label>
+                <select class="form-control" id="priority" name="priority" required>
+                    <option selected="true" disabled="disabled">Wählen Sie eine Priorität aus</option>
+                    <option value="low">Tief</option>
+                    <option value="standard">Standard</option>
+                    <option value="express">Express</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="service"><strong>Service auswählen</strong></label>
+                <select class="form-control" id="service" name="service" required>
+                    <option value="option1">Kleiner Service</option>
+                    <option value="option2">Grosser Service</option>
+                    <option value="option3">Rennski-Service</option>
+                    <option value="option4">Bindung montieren und einstellen</option>
+                    <option value="option5">Fell zuschneiden</option>
+                    <option value="option6">Heisswachsen</option>
+                </select>
+                
+                <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const optionsButtons = document.querySelectorAll(".select-option");
+                
+                    optionsButtons.forEach(button => {
+                        button.addEventListener("click", function() {
+                            const selectedOption = this.getAttribute("data-option");
+                            localStorage.setItem("selectedOption", selectedOption);
+                
+                            // Redirect to buy.html with the selected option as a query parameter
+                            window.location.href = `buy.html?option=${selectedOption}`;
+                        });
+                    });
+                
+                    // After the DOM is loaded, check for the selected option in localStorage
+                    const selectedOption = localStorage.getItem("selectedOption");
+                    if (selectedOption) {
+                        const dropdown = document.getElementById("service");
+                        dropdown.value = selectedOption;
+                    }
+                });
+                </script>
+            </div>
+            <br>
+            <div class="form-group">
+            <div id="date-preview"><Strong>Fertigstellung am:...</Strong></div>
+            <div id="price-preview"><Strong>Totale Kosten:...</Strong></div>
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Anmelden</button>
+
+
+        </form>
+    </div>
+</div>
+<footer class="bg-light text-center text-lg-start">
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-dark" href="index.html">Jetstream-Service.ch</a>
+    </div>
+
+  </footer>
+ <script src="js/pickupdate.js"></script>
+ <script src="js/price-calculator.js"></script>
+ <script src="js/update-preview.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous">
+  </script>
+</body>
+</html>

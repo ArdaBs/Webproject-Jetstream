@@ -1,0 +1,26 @@
+{
+    "templates": [
+        {
+            "path": "templates\\navigation.html",
+            "targets": [
+                "index.html",
+                "buy.html",
+                "contact.html",
+                "credits.html",
+                "about-us.html",
+                "test.html",
+                "index-test.html"
+            ]
+        },
+        {
+            "path": "templates\\head.html",
+            "targets": [
+                "index.html",
+                "buy.html",
+                "contact.html",
+                "credits.html",
+                "about-us.html"
+            ]
+        }
+    ]
+}
